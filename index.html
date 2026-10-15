@@ -455,9 +455,15 @@ footer .wrap {display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </footer>
 
 <script>
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
 const nav = document.getElementById("navLinks");
 const pages = document.querySelectorAll(".page");
 const tabs = document.querySelectorAll(".tabs a");
+
+function toTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+}
 
 function showPage() {
   let id = location.hash.replace("#", "") || "home";
@@ -469,10 +475,12 @@ function showPage() {
     t.classList.toggle("active", on);
     if (on) nav.scrollTo({ left: Math.max(t.offsetLeft - 24, 0), behavior: "smooth" });
   });
-  window.scrollTo(0, 0);
+  toTop();
 }
 
 window.addEventListener("hashchange", showPage);
+window.addEventListener("load", toTop);
+window.addEventListener("pageshow", toTop);
 document.getElementById("year").textContent = new Date().getFullYear();
 showPage();
 </script>
