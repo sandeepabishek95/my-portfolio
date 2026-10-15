@@ -81,6 +81,13 @@ h2::after {content:"";display:block;width:56px;height:2px;background:var(--gold)
 
 /* Home */
 .hero {display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.photo {
+  display:block;width:140px;height:140px;border-radius:50%;
+  object-fit:cover;object-position:center 20%;
+  border:2px solid var(--gold-line);
+  box-shadow:0 0 0 6px var(--gold-soft),0 18px 40px -16px rgba(0,0,0,.6);
+  margin-bottom:26px;
+}
 .status {
   display:inline-flex;align-items:center;gap:9px;
   border:1px solid var(--gold-line);background:var(--gold-soft);color:var(--gold);
@@ -106,9 +113,7 @@ h1 {
 .text-link {font-weight:600;color:var(--gold);padding:8px 4px;border-bottom:2px solid transparent}
 .text-link:hover {border-bottom-color:var(--gold)}
 
-.highlights {
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;
-}
+.highlights {display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .stat {
   background:var(--card);border:1px solid var(--card-border);border-radius:18px;padding:20px 20px 18px;
 }
@@ -125,6 +130,11 @@ h1 {
 .about p.big {
   font-family:var(--serif);font-weight:500;color:var(--text);
   font-size:1.55rem;line-height:1.4;letter-spacing:-.01em;margin-bottom:26px;
+}
+.portrait {
+  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 10%;
+  border-radius:20px;border:1px solid var(--gold-line);margin-bottom:16px;
+  box-shadow:0 24px 50px -24px rgba(0,0,0,.7);
 }
 .facts div {padding:14px 0;border-bottom:1px solid var(--card-border)}
 .facts div:first-child {padding-top:0}
@@ -200,6 +210,7 @@ footer .wrap {display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   .card {padding:24px}
   .timeline {padding-left:24px}
   .role-block::before {left:-33px}
+  .portrait {max-width:380px}
 }
 @media(prefers-reduced-motion:reduce) {
   html {scroll-behavior:auto}
@@ -231,6 +242,7 @@ footer .wrap {display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 <section class="page" id="home">
   <div class="hero">
     <div>
+      <img class="photo" src="photo.jpg" alt="Sandeep Abishek" onerror="this.style.display='none'">
       <span class="status">Open to roles in the UAE</span>
       <h1>Sandeep Abishek</h1>
       <p class="role">Application Support Engineer based in Dubai</p>
@@ -263,13 +275,16 @@ footer .wrap {display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
       <p>Earlier in my career I worked in healthcare claims at Cognizant and in technical and customer support at Sutherland and Foundever, which gave me a strong grounding in process discipline and working directly with users.</p>
       <p>I am looking for application support, IT support, service desk and customer support roles in the UAE.</p>
     </div>
-    <dl class="facts card">
-      <div><dt>Role</dt><dd>Application Support Engineer</dd></div>
-      <div><dt>Based in</dt><dd>Dubai, United Arab Emirates</dd></div>
-      <div><dt>Experience</dt><dd>8+ years</dd></div>
-      <div><dt>Focus</dt><dd>Production support, incident management, RCA</dd></div>
-      <div><dt>Languages</dt><dd>English, Tamil</dd></div>
-    </dl>
+    <div class="side">
+      <img class="portrait" src="full.jpg" alt="Sandeep Abishek in a black suit" onerror="this.style.display='none'">
+      <dl class="facts card">
+        <div><dt>Role</dt><dd>Application Support Engineer</dd></div>
+        <div><dt>Based in</dt><dd>Dubai, United Arab Emirates</dd></div>
+        <div><dt>Experience</dt><dd>8+ years</dd></div>
+        <div><dt>Focus</dt><dd>Production support, incident management, RCA</dd></div>
+        <div><dt>Languages</dt><dd>English, Tamil</dd></div>
+      </dl>
+    </div>
   </div>
 </section>
 
