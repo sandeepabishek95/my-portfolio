@@ -1,258 +1,393 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep Abishek - Application Support Engineer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        header {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        h1 {
-            color: #667eea;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            font-size: 0.95em;
-        }
-        .contact-info a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
-        }
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-            font-size: 1.5em;
-        }
-        .experience-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
-        }
-        .company {
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.05em;
-        }
-        .date {
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-        .description {
-            margin-top: 10px;
-            color: #555;
-            line-height: 1.7;
-        }
-        .description strong {
-            color: #333;
-        }
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-        }
-        .skill {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 12px 15px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            color: white;
-            font-size: 0.95em;
-        }
-        .summary {
-            line-height: 1.8;
-            color: #555;
-            font-size: 1em;
-        }
-        footer {
-            text-align: center;
-            color: white;
-            margin-top: 30px;
-            padding: 20px;
-            font-size: 0.9em;
-        }
-        .location {
-            color: #666;
-            font-size: 0.95em;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d19">
+<title>Sandeep Abishek | IT Support Portfolio</title>
+
+<style>
+:root {
+  --bg:#080d19;
+  --card:#111a2d;
+  --text:#f2f5ff;
+  --muted:#a6b2c9;
+  --blue:#65a8ff;
+  --purple:#a78bfa;
+  --border:rgba(255,255,255,.12);
+}
+* {box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body {
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:radial-gradient(ellipse at top left,#18264a 0%,var(--bg) 48%);
+  color:var(--text);line-height:1.7;
+}
+a {color:inherit;text-decoration:none}
+.container {width:min(1100px,92%);margin:auto}
+nav {
+  position:sticky;top:0;z-index:10;
+  background:rgba(8,13,25,.95);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner {
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.logo {font-size:1.2rem;font-weight:800}
+.logo span {color:var(--blue)}
+.nav-links {display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a {color:var(--muted);font-size:.88rem}
+.nav-links a:hover {color:var(--blue)}
+.menu-btn {
+  display:none;padding:8px 12px;border-radius:8px;
+  border:1px solid var(--border);background:var(--card);color:white;
+}
+.hero {padding:100px 0 80px}
+.badge {
+  display:inline-block;padding:6px 13px;border-radius:30px;
+  border:1px solid #344b78;background:#142344;color:#b8d7ff;
+  font-size:.85rem;margin-bottom:22px
+}
+h1 {font-size:clamp(2.5rem,7vw,5rem);line-height:1.1;letter-spacing:-2px;margin-bottom:22px}
+.gradient {
+  background:linear-gradient(100deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.hero p {max-width:740px;color:var(--muted);font-size:1.08rem}
+.actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn {
+  display:inline-block;padding:11px 19px;border-radius:9px;
+  font-weight:700;border:1px solid var(--border);transition:.2s
+}
+.btn:hover {transform:translateY(-2px)}
+.primary {background:linear-gradient(110deg,#3988ed,#8065e8);border:none}
+.secondary {background:#ffffff08}
+.meta {display:flex;gap:24px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:.9rem}
+section {padding:65px 0;scroll-margin-top:85px}
+.kicker {color:var(--blue);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h2 {font-size:clamp(1.8rem,4vw,2.5rem);margin:7px 0 14px}
+.intro {color:var(--muted);max-width:720px;margin-bottom:28px}
+.card {
+  background:linear-gradient(145deg,#142039,var(--card));
+  border:1px solid var(--border);border-radius:16px;padding:26px
+}
+.about-grid {display:grid;grid-template-columns:1.4fr .8fr;gap:20px}
+.muted {color:var(--muted)}
+.facts {display:grid;gap:12px}
+.fact {background:#ffffff06;padding:14px;border-radius:10px;border:1px solid var(--border)}
+.fact span {display:block;color:var(--muted);font-size:.85rem}
+.skills-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill {
+  padding:18px;border:1px solid var(--border);border-radius:12px;
+  background:var(--card);transition:.2s
+}
+.skill:hover {border-color:var(--blue);transform:translateY(-3px)}
+.skill h3 {font-size:.97rem;margin:6px 0}
+.skill p {color:var(--muted);font-size:.83rem}
+.experience-list {display:grid;gap:17px}
+.experience-top {
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:12px;flex-wrap:wrap;margin-bottom:14px
+}
+.job {font-size:1.12rem;font-weight:800}
+.company {color:#9bc4ff;font-weight:600}
+.date {color:var(--muted);font-size:.82rem;border:1px solid var(--border);border-radius:25px;padding:4px 11px}
+.experience-card {background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
+.experience-card p {color:var(--muted);margin:10px 0}
+ul {padding-left:22px}
+li {margin-bottom:7px;color:var(--muted)}
+li::marker {color:var(--blue)}
+.project-grid,.education-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.project-card,.education-card {padding:26px;background:var(--card);border:1px solid var(--border);border-radius:16px}
+.project-card h3,.education-card h3 {margin:10px 0}
+.project-card p,.education-card p {color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.project-label {color:var(--blue);font-size:.8rem;font-weight:800}
+.project-link {display:inline-block;color:#9bc4ff;margin-top:10px;font-weight:700}
+.language-list {display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.language-tag {padding:9px 15px;border-radius:30px;background:#65a8ff15;border:1px solid #65a8ff35;font-size:.9rem}
+.contact-panel {text-align:center;padding:40px 25px}
+.contact-panel p {color:var(--muted);max-width:650px;margin:15px auto 25px}
+.contact-links {display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.contact-links a {padding:10px 15px;background:#ffffff08;border:1px solid var(--border);border-radius:10px;font-size:.88rem}
+.contact-links a:hover {border-color:var(--blue)}
+footer {border-top:1px solid var(--border);padding:25px 0;color:var(--muted);text-align:center;font-size:.86rem}
+@media(max-width:800px) {
+  .skills-grid {grid-template-columns:repeat(2,1fr)}
+  .about-grid {grid-template-columns:1fr}
+}
+@media(max-width:650px) {
+  .nav-inner {min-height:65px}
+  .menu-btn {display:block;font-size:1.1rem;cursor:pointer}
+  .nav-links {
+    display:none;position:absolute;top:65px;left:0;width:100%;
+    padding:20px 4%;background:#0b1222;
+    border-bottom:1px solid var(--border);flex-direction:column;gap:15px
+  }
+  .nav-links.open {display:flex}
+  .hero {padding:70px 0 55px}
+  h1 {letter-spacing:-1px}
+  .meta {flex-direction:column;gap:10px}
+  .project-grid,.education-grid {grid-template-columns:1fr}
+  .skills-grid {gap:10px}
+  .skill {padding:13px}
+  .experience-card,.card {padding:20px}
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Sandeep Abishek</h1>
-            <p class="subtitle">Application Support Engineer | Azure Cloud | Active Directory</p>
-            <p class="location">📍 Dubai, United Arab Emirates | 8+ Years Experience</p>
-            <div class="contact-info">
-                <a href="mailto:sandeepabishek95@gmail.com">📧 sandeepabishek95@gmail.com</a>
-                <a href="tel:+971582315505">📱 +971-582-315505</a>
-                <a href="https://www.linkedin.com/in/sandeep-abishek-3b073719b">💼 LinkedIn</a>
-                <a href="https://github.com/sandeepabishek95">🐙 GitHub</a>
-            </div>
-        </header>
 
-        <div class="section">
-            <h2>Professional Summary</h2>
-            <p class="summary">
-                Application Support Engineer with 8+ years of experience in Azure cloud infrastructure, Active Directory administration, and enterprise-level technical support. Currently leading incident and service-request support at CorroHealth with demonstrated expertise in maintaining 99.9% service continuity, managing 500+ monthly Salesforce tickets, and achieving 35% reduction in incident recurrence through RCA and preventive actions. Skilled in Microsoft 365, Azure, Active Directory, PowerShell, ITSM frameworks, and SLA management. Seeking opportunities in Dubai to leverage technical expertise and support capabilities.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>Core Competencies</h2>
-            <div class="skills">
-                <div class="skill">Microsoft Azure</div>
-                <div class="skill">Active Directory</div>
-                <div class="skill">Microsoft 365</div>
-                <div class="skill">PowerShell</div>
-                <div class="skill">Exchange Online</div>
-                <div class="skill">MS SQL Server</div>
-                <div class="skill">Salesforce</div>
-                <div class="skill">Jira</div>
-                <div class="skill">Incident Management</div>
-                <div class="skill">Root Cause Analysis</div>
-                <div class="skill">SLA Management</div>
-                <div class="skill">User Provisioning</div>
-                <div class="skill">ITSM Frameworks</div>
-                <div class="skill">Remote Support</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Professional Experience</h2>
-            
-            <div class="experience-item">
-                <div class="job-title">Application Support Engineer</div>
-                <div class="company">CorroHealth</div>
-                <div class="date">Sep 2023 - Present</div>
-                <div class="description">
-                    <strong>Key Achievements:</strong>
-                    <ul style="margin-left: 20px; margin-top: 8px;">
-                        <li>Maintained 99.9% service continuity in mission-critical healthcare production environments</li>
-                        <li>Resolved 500+ monthly support tickets in Salesforce with comprehensive documentation</li>
-                        <li>Achieved 35% reduction in incident recurrence rate through structured RCA and preventive actions</li>
-                        <li>Administered Active Directory for 200+ enterprise users with complete lifecycle management</li>
-                        <li>Optimized MS SQL database performance using indexing strategies and query optimization</li>
-                    </ul>
-                    <strong style="margin-top: 10px; display: block;">Responsibilities:</strong> Azure cloud administration, Active Directory user provisioning and access control, incident and service-request management, RCA for critical incidents, database performance optimization, load balancing configuration, cross-functional team coordination.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-title">Senior Process Executive</div>
-                <div class="company">Cognizant (Supporting EmblemHealth)</div>
-                <div class="date">Apr 2019 - May 2021</div>
-                <div class="description">
-                    <strong>Key Achievements:</strong>
-                    <ul style="margin-left: 20px; margin-top: 8px;">
-                        <li>Processed high-volume healthcare claims with 99.5% accuracy</li>
-                        <li>Resolved claim discrepancies and managed appeals within applicable timeframes</li>
-                        <li>Coordinated with healthcare providers across the United States</li>
-                    </ul>
-                    <strong style="margin-top: 10px; display: block;">Responsibilities:</strong> Medical insurance claims processing, claim analysis and reprocessing, provider communication, member eligibility verification, compliance and documentation, high-pressure deadline management.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-title">Associate IT Consultant</div>
-                <div class="company">Sutherland (McAfee Technical Support)</div>
-                <div class="date">Oct 2017 - Mar 2019</div>
-                <div class="description">
-                    <strong>Key Achievements:</strong>
-                    <ul style="margin-left: 20px; margin-top: 8px;">
-                        <li>Maintained 95%+ customer satisfaction rating through professional support delivery</li>
-                        <li>Handled 40-50 inbound technical support calls daily in high-volume environment</li>
-                        <li>Resolved complex technical issues across multiple software platforms</li>
-                    </ul>
-                    <strong style="margin-top: 10px; display: block;">Responsibilities:</strong> Technical support troubleshooting, Microsoft 365 support, Windows OS support, network connectivity troubleshooting, remote technical assistance, customer interaction documentation.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-title">Customer Support Executive</div>
-                <div class="company">Foundever (Bell Canada Technical Support)</div>
-                <div class="date">2017</div>
-                <div class="description">
-                    Provided technical support for broadband, router, IPTV, and email issues. Diagnosed and resolved network connectivity problems, router configuration, and customer service interactions.
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Education & Certifications</h2>
-            <div class="experience-item">
-                <div class="job-title">B.Sc. in Hospitality and Hotel Management</div>
-                <div class="company">Asan Memorial College of Arts & Science, Chennai</div>
-                <div class="date">2014</div>
-                <p>Educational credentials attested by MOFA UAE</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Languages</h2>
-            <p><strong>English</strong> (Professional), <strong>Tamil</strong> (Native)</p>
-        </div>
-
-        <footer>
-            <p>&copy; 2024 Sandeep Abishek | Application Support Engineer</p>
-            <p>Dubai, United Arab Emirates | Portfolio: sandeepabishek95.github.io/my-portfolio</p>
-        </footer>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Sandeep<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<section class="hero" id="home">
+  <div class="badge">📍 Dubai, United Arab Emirates</div>
+  <h1>Hello, I am<br><span class="gradient">Sandeep Abishek.</span></h1>
+  <p>
+    Application Support Engineer with experience in production support,
+    technical troubleshooting, incident management, service requests and
+    customer support. I enjoy resolving technical issues, improving service
+    reliability and helping users work without interruptions.
+  </p>
+  <div class="actions">
+    <a href="#experience" class="btn primary">Explore My Experience ↗</a>
+    <a href="#contact" class="btn secondary">Contact Me</a>
+    <a href="https://www.linkedin.com/in/sandeep-abishek-3b073719b"
+       target="_blank" rel="noopener noreferrer" class="btn secondary">LinkedIn ↗</a>
+  </div>
+  <div class="meta">
+    <span>💼 Application &amp; IT Support</span>
+    <span>🛠️ Troubleshooting &amp; Incident Management</span>
+    <span>🎯 Customer Service &amp; Technical Support</span>
+  </div>
+</section>
+
+<section id="about">
+  <div class="kicker">About Me</div>
+  <h2>A little about my professional journey</h2>
+  <p class="intro">My background combines technical support, application operations, customer service and healthcare process experience.</p>
+  <div class="about-grid">
+    <div class="card">
+      <p class="muted">I am an IT and application support professional with experience supporting business-critical applications, investigating incidents, managing service requests and coordinating with different teams to resolve technical problems.</p>
+      <br>
+      <p class="muted">My experience includes production support, ticket management, Windows troubleshooting, network connectivity, user access support, documentation, escalation handling and service-level monitoring.</p>
+      <br>
+      <p class="muted">I value clear communication, structured troubleshooting and following incidents through to resolution. I am interested in opportunities where I can contribute my support experience while continuing to develop my technical skills.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>Application Support</strong><span>Incidents and service requests</span></div>
+      <div class="fact"><strong>Technical Troubleshooting</strong><span>Windows, applications and connectivity</span></div>
+      <div class="fact"><strong>Service Management</strong><span>Tickets, SLAs and escalations</span></div>
+      <div class="fact"><strong>Location</strong><span>Dubai, United Arab Emirates</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="kicker">Technical Skills</div>
+  <h2>Tools and areas I work with</h2>
+  <p class="intro">Core competencies across application support, troubleshooting and IT service management.</p>
+  <div class="skills-grid">
+    <div class="skill"><div>🖥️</div><h3>Windows Support</h3><p>OS troubleshooting and configuration</p></div>
+    <div class="skill"><div>☁️</div><h3>Microsoft Azure</h3><p>Cloud support and administration</p></div>
+    <div class="skill"><div>🔐</div><h3>Active Directory</h3><p>User access and account administration</p></div>
+    <div class="skill"><div>📧</div><h3>Microsoft 365</h3><p>Productivity app troubleshooting</p></div>
+    <div class="skill"><div>🌐</div><h3>Networking</h3><p>Wi-Fi, TCP/IP and connectivity</p></div>
+    <div class="skill"><div>🖨️</div><h3>Printer Support</h3><p>Printer configuration and spooler issues</p></div>
+    <div class="skill"><div>🎫</div><h3>Jira &amp; Ticketing</h3><p>Ticket tracking and documentation</p></div>
+    <div class="skill"><div>🚨</div><h3>Incident Management</h3><p>Prioritisation and escalation</p></div>
+    <div class="skill"><div>🔎</div><h3>Root Cause Analysis</h3><p>Recurring issue investigation</p></div>
+    <div class="skill"><div>📊</div><h3>SLA Management</h3><p>Service commitments and response times</p></div>
+    <div class="skill"><div>🗄️</div><h3>MS SQL Server</h3><p>Database support and investigation</p></div>
+    <div class="skill"><div>🤝</div><h3>Customer Support</h3><p>User communication and issue ownership</p></div>
+    <div class="skill"><div>🛠️</div><h3>Remote Support</h3><p>Remote troubleshooting assistance</p></div>
+    <div class="skill"><div>📋</div><h3>ITSM</h3><p>Incident and service request workflows</p></div>
+    <div class="skill"><div>🔄</div><h3>Patch &amp; Updates</h3><p>Windows updates and hotfix support</p></div>
+    <div class="skill"><div>📚</div><h3>Documentation</h3><p>Knowledge articles and support notes</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="kicker">Career</div>
+  <h2>Professional Experience</h2>
+  <p class="intro">My professional background across application support, IT services and customer support.</p>
+  <div class="experience-list">
+
+    <article class="experience-card">
+      <div class="experience-top">
+        <div><div class="job">Application Support Engineer</div><div class="company">CorroHealth</div></div>
+        <span class="date">Sep 2023 – Present*</span>
+      </div>
+      <p>Supporting business-critical healthcare applications, service requests, production incidents and technical operations.</p>
+      <ul>
+        <li>Handle application support activities, incidents, service requests and escalations.</li>
+        <li>Monitor ticket progress and work towards SLA and customer commitments.</li>
+        <li>Investigate recurring issues and participate in root cause analysis.</li>
+        <li>Coordinate with business users and technical teams during critical incidents.</li>
+        <li>Support proactive monitoring, documentation and preventive maintenance.</li>
+      </ul>
+    </article>
+
+    <article class="experience-card">
+      <div class="experience-top">
+        <div><div class="job">Senior Process Executive</div><div class="company">Cognizant — Supporting EmblemHealth</div></div>
+        <span class="date">Apr 2019 – May 2021</span>
+      </div>
+      <p>Worked in healthcare operations, supporting claims-related processes and provider communications.</p>
+      <ul>
+        <li>Processed healthcare claims and reviewed discrepancies.</li>
+        <li>Supported claim analysis, reprocessing, appeals and documentation.</li>
+        <li>Coordinated with healthcare providers and followed process requirements.</li>
+        <li>Managed work against quality expectations and applicable deadlines.</li>
+      </ul>
+    </article>
+
+    <article class="experience-card">
+      <div class="experience-top">
+        <div><div class="job">Associate IT Consultant</div><div class="company">Sutherland — McAfee Technical Support</div></div>
+        <span class="date">Oct 2017 – Mar 2019</span>
+      </div>
+      <p>Provided technical support and troubleshooting assistance to customers.</p>
+      <ul>
+        <li>Diagnosed software, Windows and general technical issues.</li>
+        <li>Assisted customers with troubleshooting and remote support steps.</li>
+        <li>Documented customer interactions and issue resolution details.</li>
+        <li>Helped troubleshoot Microsoft applications and network connectivity.</li>
+      </ul>
+    </article>
+
+    <article class="experience-card">
+      <div class="experience-top">
+        <div><div class="job">Customer Support Executive</div><div class="company">Foundever — Bell Canada Technical Support</div></div>
+        <span class="date">2017</span>
+      </div>
+      <p>Provided customer support for broadband, router, IPTV and email issues.</p>
+      <ul>
+        <li>Diagnosed internet and network connectivity problems.</li>
+        <li>Assisted with router configuration and technical troubleshooting.</li>
+        <li>Communicated troubleshooting steps clearly and professionally.</li>
+      </ul>
+    </article>
+
+  </div>
+  <p class="intro" style="margin-top:14px">*Verify your current job title and employment dates before publishing.</p>
+</section>
+
+<section id="projects">
+  <div class="kicker">Projects</div>
+  <h2>Selected Projects</h2>
+  <p class="intro">Websites and practical projects you can share with recruiters.</p>
+  <div class="project-grid">
+    <article class="project-card">
+      <span class="project-label">PROJECT 01</span>
+      <h3>Real Estate Website</h3>
+      <p>A website project focused on presenting real estate and property information.</p>
+      <a class="project-link" href="https://sandeepabishek95-cloud.github.io/Jagan-realestate/" target="_blank" rel="noopener noreferrer">View website ↗</a>
+    </article>
+    <article class="project-card">
+      <span class="project-label">PROJECT 02</span>
+      <h3>Personal Portfolio</h3>
+      <p>A professional portfolio showcasing my career, skills and technical background.</p>
+      <a class="project-link" href="https://sandeepabishek95.github.io/my-portfolio/" target="_blank" rel="noopener noreferrer">View portfolio ↗</a>
+    </article>
+    <article class="project-card">
+      <span class="project-label">PROJECT 03</span>
+      <h3>Web Application Concepts</h3>
+      <p>Personal practice with HTML, CSS and JavaScript to build responsive interfaces.</p>
+      <span class="project-link">Add demo link when available</span>
+    </article>
+    <article class="project-card">
+      <span class="project-label">PROJECT 04</span>
+      <h3>IT Troubleshooting</h3>
+      <p>Practical support knowledge covering Windows, printers, Wi-Fi, applications and incident documentation.</p>
+      <span class="project-link">Technical skills showcase</span>
+    </article>
+  </div>
+</section>
+
+<section id="education">
+  <div class="kicker">Background</div>
+  <h2>Education &amp; Languages</h2>
+  <div class="education-grid">
+    <article class="education-card">
+      <h3>B.Sc. in Hospitality and Hotel Management</h3>
+      <p>Asan Memorial College of Arts &amp; Science, Chennai</p>
+      <p>Graduation year: 2014</p>
+      <p>UAE MOFA attestation completed, as previously provided.</p>
+    </article>
+    <article class="education-card">
+      <h3>Languages</h3>
+      <p>Languages used in professional and everyday communication.</p>
+      <div class="language-list">
+        <span class="language-tag">English — Professional</span>
+        <span class="language-tag">Tamil — Native</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card contact-panel">
+    <div class="kicker">Get in Touch</div>
+    <h2>Let's connect</h2>
+    <p>I am interested in opportunities in application support, IT support, service desk and customer support. Feel free to contact me or view my professional profiles.</p>
+    <div class="contact-links">
+      <a href="mailto:sandeepabishek95@gmail.com">✉ Email</a>
+      <a href="tel:+971582315505">☎ Phone</a>
+      <a href="https://www.linkedin.com/in/sandeep-abishek-3b073719b" target="_blank" rel="noopener noreferrer">💼 LinkedIn ↗</a>
+      <a href="https://github.com/sandeepabishek95" target="_blank" rel="noopener noreferrer">🐙 GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Sandeep Abishek · Dubai, United Arab Emirates</p>
+    <p>Professional Portfolio · GitHub Pages</p>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  menuBtn.textContent = open ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "Open navigation");
+    menuBtn.textContent = "☰";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
